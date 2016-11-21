@@ -31,15 +31,12 @@ local P Dict D D2 D3 Dout in
    end
 
    P = proc{$ L Din Dout}
-	  {Browse L}
 	  case L of H|T then
 	     local A in
 		A = {Dict.put Din H {Dict.get Din H 0}+1}
-		{Browse A}
 		{P T A Dout} 
 	     end
 	  else
-	     {Browse 'else'}
 	     Dout = Din
 	  end
        end
