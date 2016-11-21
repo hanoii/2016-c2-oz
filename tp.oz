@@ -19,12 +19,22 @@ local P Dict D D2 D3 Dout in
 	    V
 	 [] (K#V)|Dr andthen K>Key then
 	    Default
-	 [] (K#V)|Dr andthen K<Key then	  
+	 [] (K#V)|Dr andthen K<Key then
 	    {Get Dr Key Default}
 	 end
       end
       fun {Domain Ds}
-	 {Map Ds fun {$ K#_} K end}
+	 local L FreqSort in
+	    fun {FreqSort X Y}
+	       if X.2 == Y.2 then
+		  X.1 < Y.1
+	       else
+		  X.2 > Y.2
+	       end
+	    end
+	    L = {Map Ds fun {$ K#V} K#V end}
+	    {Sort L FreqSort}
+	 end
       end
    in
       Dict=dict(new:NewDicc put:Put get:Get domain:Domain)
@@ -34,19 +44,19 @@ local P Dict D D2 D3 Dout in
 	  case L of H|T then
 	     local A in
 		A = {Dict.put Din H {Dict.get Din H 0}+1}
-		{P T A Dout} 
+		{P T A Dout}
 	     end
 	  else
 	     Dout = Din
 	  end
        end
-  
+
 
    D = {Dict.new}
-   {P [a b b a d e d a d f a] D Dout}
-   {Browse {Dict.get Dout a 0}}
-   
-   
+   {P [g g a b b a d e d a d f a a a] D Dout}
+   {Show {Dict.domain Dout}}
+
+
    %D2 = {Dict.put D 'Hola' 'Mundo'}
    %D3 = {Dict.put D2 'AA' 'BB'}
    %{Browse {Dict.domain D3}}
