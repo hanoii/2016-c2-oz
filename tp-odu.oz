@@ -54,5 +54,5 @@ local P Dict D D2 D3 Dout in
 
    D = {Dict.new}
    {P [g g a b b a d e d a d f a a a] D Dout}
-   {Show {Dict.domain Dout}}
+   {Browse {Dict.domain Dout}}
 end
