@@ -55,9 +55,4 @@ local P Dict D D2 D3 Dout in
    D = {Dict.new}
    {P [g g a b b a d e d a d f a a a] D Dout}
    {Show {Dict.domain Dout}}
-
-
-   %D2 = {Dict.put D 'Hola' 'Mundo'}
-   %D3 = {Dict.put D2 'AA' 'BB'}
-   %{Browse {Dict.domain D3}}
 end
