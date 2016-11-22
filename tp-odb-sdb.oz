@@ -36,7 +36,7 @@ local P D D2 D3 Dout in
 	    in
 	       {GetList Ds Key Default}
 	    end
-	    
+
 	    fun {Domain}
 	       local L FreqSort in
 		  fun {FreqSort X Y}
@@ -69,9 +69,9 @@ local P D D2 D3 Dout in
 		Dout = Din
 	     end
 	  end
-      
+
       D = {NewDicc}
       {P [g g a b b a d e d a d f a a a] D Dout}
-      {Browse {Dout.domain}}
+      {Browse {Dout.domain}} % [a#6 d#3 b#2 g#2 e#1 f#1]
    end
 end

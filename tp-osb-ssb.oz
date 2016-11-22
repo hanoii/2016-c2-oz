@@ -2,7 +2,7 @@
 % No hace falta el Wrap/Unwrap
 % El código es el mismo para open/secure
 local P Dict D D2 D3 Dout in
-   local 
+   local
       fun {NewDicc}
 	 Ds = {NewCell nil}
 	 proc {Put Key Value}
@@ -36,7 +36,7 @@ local P Dict D D2 D3 Dout in
 	 in
 	    {GetList @Ds Key Default}
 	 end
-	 
+
 	 fun {Domain}
 	    local L FreqSort in
 	       fun {FreqSort X Y}
@@ -65,6 +65,6 @@ local P Dict D D2 D3 Dout in
 
       D = {NewDicc}
       {P [g g a b b a d e d a d f a a a] D}
-      {Browse {D.domain}}
+      {Browse {D.domain}} % [a#6 d#3 b#2 g#2 e#1 f#1]
    end
 end
