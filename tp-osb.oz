@@ -51,22 +51,17 @@ local P Dict D D2 D3 Dout in
 	 dict(put:Put get:Get domain:Domain data:Ds)
       end
    in
-   
-   P = proc{$ L Din}
-	  case L of H|T then
-	     {Dict.put Din H {Dict.get Din H 0}+1}
-	     {P T Din}
-	  else
-	      skip
+      P = proc{$ L Din}
+	     case L of H|T then
+		{Din.put H {Din.get H 0}+1}
+		{P T Din}
+	     else
+		skip
+	     end
 	  end
-       end
-
 
       D = {NewDicc}
-      {D.put a b}
-      {D.put b c}
-      {Browse @(D.data)}
-   %{P [g g a b b a d e d a d f a a a] D}
-   %{Browse {Dict.domain D}}
+      {P [g g a b b a d e d a d f a a a] D}
+      {Browse {D.domain}}
    end
 end
