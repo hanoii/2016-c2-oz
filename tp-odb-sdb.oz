@@ -1,3 +1,6 @@
+% Como es Bundled, ya es seguro por lexical scoping
+% No hace falta el Wrap/Unwrap
+% El código es el mismo para open/secure
 local P D D2 D3 Dout in
    local
       fun {DiccObject Ds}
