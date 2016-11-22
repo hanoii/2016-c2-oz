@@ -48,7 +48,7 @@ local P Dict D D2 D3 Dout in
 	    end
 	 end
       in
-	 dict(put:Put get:Get domain:Domain data:Ds)
+	 dict(put:Put get:Get domain:Domain)
       end
    in
       P = proc{$ L Din}
