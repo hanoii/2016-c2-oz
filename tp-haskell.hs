@@ -2,10 +2,9 @@ import Data.List
 import Data.Ord
 
 -------------------------------------- TDA : --------------------------------------
-- es de tipo : abierto (se puede ver y modificar su implementación interna)
--              unbundled (se le pasa el tda a las funciones que operan sobre el)
--              stateless (nunca muta el TDA)
-
+----- es de tipo : closed ( no se puede ver que dict contiene un [(Char,Integer)] )
+-----              unbundled (se le pasa el tda a las funciones que operan sobre el)
+-----             statelss (nunca muta el TDA)
 data Dict =  Dict [(Char,Integer)] deriving (Show)
 
 newDict :: Dict
@@ -65,5 +64,3 @@ ordenarLetrasPorFrecuencia letras =
 main = do
   let letras = ['a','a','b','b','b','c','d','d','e','e','e','e','e']
   print (ordenarLetrasPorFrecuencia letras)
-
-
